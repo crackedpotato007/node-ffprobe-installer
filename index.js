@@ -10,6 +10,7 @@ const target = platform + '-' + arch;
 const packageName = '@ffprobe-installer/' + target;
 
 if (!require('./package.json').optionalDependencies[packageName]) {
+	return
 	throw new Error('Unsupported platform/architecture: ' + target);
 }
 
